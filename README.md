@@ -53,5 +53,3 @@ http://whiskicasa.tplinkdns.com
 
 8080
 9000
-5000
-
