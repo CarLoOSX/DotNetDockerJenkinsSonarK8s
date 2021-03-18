@@ -9,7 +9,7 @@ pipeline
             {
 			    echo '.: Going to the Project\'s Directory :.'
 			    
-			    echo "-------------- ${env.BRANCH_NAME} -----------------"
+			    echo "-------------- ${env.GIT_BRANCH} -----------------"
 			    
  
 				dir('src/HelloWorldMicroService') {
