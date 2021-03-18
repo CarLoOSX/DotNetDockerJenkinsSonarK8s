@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldMicroService", "HelloWorldMicroService\HelloWorldMicroService.csproj", "{C2A60B7B-E48F-4741-B4AB-8436E07E5D8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldMicroService.Tests", "HelloWorldMicroService.Tests\HelloWorldMicroService.Tests.csproj", "{17DD4C2C-7F54-4652-AD69-A8BE1839FAFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{C2A60B7B-E48F-4741-B4AB-8436E07E5D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2A60B7B-E48F-4741-B4AB-8436E07E5D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2A60B7B-E48F-4741-B4AB-8436E07E5D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17DD4C2C-7F54-4652-AD69-A8BE1839FAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DD4C2C-7F54-4652-AD69-A8BE1839FAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DD4C2C-7F54-4652-AD69-A8BE1839FAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DD4C2C-7F54-4652-AD69-A8BE1839FAFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
