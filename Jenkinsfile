@@ -24,10 +24,20 @@ pipeline
 				    echo '.: Exiting the Project\'s Directory :.'
 				
         }
-        stage('Test') {
+         stage('Deploy') {
             steps {
-                echo '.: Testing :.'
-	
+                    echo '.: Creating Docker Image (Dotnet) :.'
+    
+                    sh "${env.docker} build -t carloosx/aspnethelloworld ."
+    
+                    echo '.: Pushing new image to docker hub :.'
+    
+                    sh "${env.docker} login"
+                    
+                    sh "${env.docker} push carloosx/aspnethelloworld"
+    
+                    echo '.: Image uploaded to docker hub :.'
+            }
         }
         stage('Deploy') {
             steps {
