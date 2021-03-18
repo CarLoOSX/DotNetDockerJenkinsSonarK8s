@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: aspnetcore
+    version: "BUILDNUMBER"
   ports:
     - protocol: "TCP"
       # Port accessible inside cluster
