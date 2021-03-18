@@ -3,17 +3,15 @@ pipeline
     agent any
     stages 
     {
-    
-          script {
-                        	   if( env.GIT_BRANCH =~ 'jenkins' ) {
-                                          currentBuild.result = 'SUCCESS'
-                                          echo '.: THIS IS AN EARLY SKIP :.'
-                                          return
-                                       }
-                         }
         stage('Build') 
         {
-   
+      script {
+                           	   if( env.GIT_BRANCH =~ 'jenkins' ) {
+                                             currentBuild.result = 'SUCCESS'
+                                             echo '.: THIS IS AN EARLY SKIP :.'
+                                             return
+                                          }
+                            }
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
