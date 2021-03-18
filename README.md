@@ -45,15 +45,36 @@
 * **Minikube** página oficial: https://kubernetes.io/es/docs/tasks/tools/install-kubectl/
   + Encargado de desplegar los pods (imagenes de docker) y establecer los diferentes servicios.
 
+#### SonarQube para .NetCore CLI (SonarScanner)
+
+  ```
+  dotnet tool install --global dotnet-sonarscanner
+  ```
+* Probablemente, necesitarás añadirlo a tu path, normalmente se encuentra en:
+  ```
+  ~.dotnet/tools
+  ```
+
+#### Recuerda que tendrás que configurar las siguientes variables de entorno para Jenkins
+  ```
+  dotnet
+  sonarScanner
+  kubectl
+  docker
+  ```
 
 #### Dirección publica (Servidor)
 
 http://whiskicasa.tplinkdns.com
 
-
+ ```
+ PUERTOS : 
+          8080 (JENKINS) 
+          9000 (SONARQUBE)
+ ```
 
 ### Comandos para blue green test:
- #### CURL CONSTANTE
+#### CURL CONSTANTE
  ```
 while true; do curl http://MINIKUBE-IP:5000/HelloWorld; sleep 0.2; echo; done
  ```
