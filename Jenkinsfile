@@ -11,9 +11,10 @@ pipeline
 			    
 			    echo "--------------  ${env.GIT_BRANCH} -----------------"
 			    
-			    if ( "${env.GIT_BRANCH}" ==~ "jenkins" ) {
-                    echo "YEEEEEHAAAA"
-                } 
+			   if( ${env.GIT_BRANCH} =~ 'jenkins' ) {
+                  currentBuild.result = 'SUCCESS'
+                  return
+               }
  
 				dir('src/HelloWorldMicroService') {
     			
