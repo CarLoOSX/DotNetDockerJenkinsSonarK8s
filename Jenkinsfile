@@ -15,6 +15,7 @@ pipeline
 			       script {
                     	   if( ${env.GIT_BRANCH} =~ 'jenkins' ) {
                                       currentBuild.result = 'SUCCESS'
+                                      echo '.: THIS IS AN EARLY SKIP :.'
                                       return
                                    }
                      }
