@@ -88,5 +88,5 @@ kubectl patch service aspnetcore-service-CURREN-TVERSION -p '{"spec":{"selector"
 
 # 3. DEMO
 
-![image alt text](Images/video.png)
+![image alt text](Images/video-demo.png)
 [DEMO](https://youtu.be/YSSy-qTvBWA "DEMO")
