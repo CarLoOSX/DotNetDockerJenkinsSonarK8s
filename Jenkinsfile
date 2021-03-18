@@ -7,7 +7,7 @@ pipeline
         {
    	        when {
                 expression {
-                    return env.BRANCH_NAME != 'main';
+                    return env.BRANCH_NAME == 'main';
                 }
             }
                    
