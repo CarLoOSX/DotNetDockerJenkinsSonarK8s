@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: aspnetcore
+        version: "BUILDNUMBER"
     spec:
       containers:
         - name: aspnetcore
