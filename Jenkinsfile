@@ -8,6 +8,9 @@ pipeline
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
+			    
+			    echo "-------------- ${env.BRANCH_NAME} -----------------"
+			    
  
 				dir('src/HelloWorldMicroService') {
     			
