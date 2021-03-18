@@ -51,4 +51,19 @@
 http://whiskicasa.tplinkdns.com
 
 
-# 3. Resultados
+
+### Comandos para blue green test:
+ #### CURL CONSTANTE
+ ```
+while true; do curl http://MINIKUBE-IP:5000/HelloWorld; sleep 0.2; echo; done
+ ```
+
+#### CAMBIO DE VERSION APP SERVICE EN CALIENTE
+ ```
+kubectl patch service aspnetcore-service-CURREN-TVERSION -p '{"spec":{"selector":{"version": "NEW-VERSION"}}}'  
+ ```
+
+# 3. DEMO
+
+![image alt text](Images/video-demo.png)
+[DEMO](https://youtu.be/YSSy-qTvBWA "DEMO")
