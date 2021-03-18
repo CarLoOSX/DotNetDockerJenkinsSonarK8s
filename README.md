@@ -1,5 +1,5 @@
 # NetCoreDockerJenkinsSonarK8s 🎓🏭
-# LaSalle – Modelos de desarollo del software 
+# LaSalle – Modelos de desarrollo del software 
 
 
 # Contenido 📇
@@ -34,52 +34,21 @@
 ![alt text](Images/GeneralDiagram.png)
 
 # 2. Instalación 
+ Programas utilizados:
 
-```
-https://dotnet.microsoft.com/download
-```
+* **Jenkins** página oficial: https://www.jenkins.io/download/
+  + Utilizamos el puerto 8080 que se encuentra publico en el servidor para poder lanzar el trigger (Webhook).
+* **Sonarqube** página oficial: https://www.sonarqube.org/downloads/ 
+  + Utilizamos el puerto 9000 para poder enlazar el analizador de código estático (Stage test pipeline).
+* **Docker** página oficial: https://docs.docker.com/docker-for-windows/install/
+  + Generamos nuestra imagen docker a traves del fichero Dockerfile y lo subimos al Docker Hub (Deployment).
+* **Minikube** página oficial: https://kubernetes.io/es/docs/tasks/tools/install-kubectl/
+  + Encargado de desplegar los pods (imagenes de docker) y establecer los diferentes servicios.
 
-### Run The app 
 
-#### Go to project path 
-
-```
-NetCoreDockerK8s/src/HelloWorldMicroService
-```
-
-#### Execute the app
-
-```
-dotnet run
-```
-
-#### You will see something like this
-
-![alt text](Images/dotnet-run.png)
-
-#### Run Test
-
-#### Go to project path
-
-```
-NetCoreDockerK8s/src/HelloWorldMicroService
-```
-
-#### Execute the app
-
-```
-dotnet test
-```
-
-#### Application
-
-### Base url
+#### Dirección publica (Servidor)
 
 http://whiskicasa.tplinkdns.com
 
-### Ports
-
-8080
-9000
 
 # 3. Resultados
