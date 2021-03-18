@@ -5,19 +5,20 @@ pipeline
     {
         stage('Build') 
         {
-      script {
-                           	   if( env.GIT_BRANCH =~ 'jenkins' ) {
-                                             currentBuild.result = 'SUCCESS'
-                                             echo '.: THIS IS AN EARLY SKIP :.'
-                                             return
-                                          }
-                            }
+   
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
 			    
 			    echo "--------------  ${env.GIT_BRANCH} -----------------"
 			
+			    script {
+			        if( env.GIT_BRANCH =~ 'jenkins' ) {
+			            currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
+			            sleep(1)   // Interrupt is not blocking and does not take effect immediately.
+			        }
+                }
+                
 				dir('src/HelloWorldMicroService') {
     			
 				    echo '.: Starting Publishing to SonarQube :.'
