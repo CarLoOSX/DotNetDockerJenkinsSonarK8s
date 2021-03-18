@@ -11,6 +11,9 @@ pipeline
 			    
 			    echo "-------------- ${env.GIT_BRANCH} -----------------"
 			    
+			    if ( "${env.GIT_BRANCH}" ==~ /jenkins/ ) {
+                    echo "YEEEEEHAAAA"
+                } 
  
 				dir('src/HelloWorldMicroService') {
     			
@@ -51,6 +54,7 @@ pipeline
                     sh "${env.docker} push carloosx/aspnethelloworld"
     
                     echo '.: Image uploaded to docker hub :.'
+               
             }
         }
         stage('Orchestrate') {
