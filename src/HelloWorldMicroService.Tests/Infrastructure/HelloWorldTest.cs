@@ -19,7 +19,7 @@ namespace HelloWorldMicroService.Tests.Infrastructure
         [Test]
         public void AssertHelloWorldIsShown()
         {
-            Assert.AreEqual(controller.Get(), "Hello World!!!!!!!!!!!!!");
+            Assert.AreEqual(controller.Get(), "Hello World");
         }
     }
 }
