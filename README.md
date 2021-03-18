@@ -31,7 +31,7 @@
 
 ## Jenkins Pipeline Diagram 🔄
 
-![alt text](Images/FirstApproachDiagram.png)
+![alt text](Images/GeneralDiagram.png)
 
 # 2. Instalación 
 
