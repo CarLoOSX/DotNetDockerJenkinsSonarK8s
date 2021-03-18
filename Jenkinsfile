@@ -9,7 +9,7 @@ pipeline
             {
 			    echo '.: Going to the Project\'s Directory :.'
 			    
-			    echo "-------------- ${env.GIT_BRANCH} -----------------"
+			    echo "--------------  ${env.GIT_BRANCH} -----------------"
 			    
 			    if ( "${env.GIT_BRANCH}" ==~ "jenkins" ) {
                     echo "YEEEEEHAAAA"
