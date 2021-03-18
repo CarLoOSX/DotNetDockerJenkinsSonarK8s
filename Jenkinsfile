@@ -4,11 +4,11 @@ pipeline
     stages 
     {
         stage('Build') 
-        {
+        {          
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
- 
+	
 				dir('src/HelloWorldMicroService') {
     			
 				    echo '.: Starting Publishing to SonarQube :.'
@@ -48,9 +48,15 @@ pipeline
                     sh "${env.docker} push carloosx/aspnethelloworld"
     
                     echo '.: Image uploaded to docker hub :.'
+               
             }
         }
         stage('Orchestrate') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'main';
+                }
+            }
             steps {
                     echo '.: Deploying to kubernetes with Build version :.'
                 
