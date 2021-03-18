@@ -20,7 +20,7 @@ namespace HelloWorldMicroService.Tests.Domain
         [Test]
         public void AssertHelloWorldIsShown()
         {
-            Assert.AreEqual(_domain.HelloWorldText(), AppResources.Hello_World);
+            Assert.AreEqual(_domain.HelloWorldText(), "Hello World");
         }
     }
 }
