@@ -56,7 +56,7 @@
   ```
   ~.dotnet/tools
   ```
-  
+
   #### Recuerda que tendrás que configurar las siguientes variables de entorno para Jenkins
   ```
   dotnet
@@ -76,7 +76,7 @@ http://whiskicasa.tplinkdns.com
  ```
 
 ### Comandos para blue green test:
- #### CURL CONSTANTE
+#### CURL CONSTANTE
  ```
 while true; do curl http://MINIKUBE-IP:5000/HelloWorld; sleep 0.2; echo; done
  ```
