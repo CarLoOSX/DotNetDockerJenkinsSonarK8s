@@ -54,7 +54,7 @@ pipeline
         stage('Orchestrate') {
             when {
                 expression {
-                    return env.BRANCH_NAME != 'main';
+                    return env.BRANCH_NAME == 'main';
                 }
             }
             steps {
