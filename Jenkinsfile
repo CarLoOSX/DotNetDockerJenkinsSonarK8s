@@ -4,16 +4,9 @@ pipeline
     stages 
     {
         stage('Build') 
-        {
-   	        when {
-                expression {
-                    return env.BRANCH_NAME == 'main';
-                }
-            }
-                   
+        {          
             steps 
             {
-            			    echo "--------------  ${env.GIT_BRANCH} -----------------"
 			    echo '.: Going to the Project\'s Directory :.'
 	
 				dir('src/HelloWorldMicroService') {
@@ -59,6 +52,11 @@ pipeline
             }
         }
         stage('Orchestrate') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'main';
+                }
+            }
             steps {
                     echo '.: Deploying to kubernetes with Build version :.'
                 
