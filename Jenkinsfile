@@ -5,16 +5,19 @@ pipeline
     {
         stage('Build') 
         {
-        	   if( ${env.GIT_BRANCH} =~ 'jenkins' ) {
-                          currentBuild.result = 'SUCCESS'
-                          return
-                       }
-         
+   
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
 			    
 			    echo "--------------  ${env.GIT_BRANCH} -----------------"
+			
+			       script {
+                    	   if( ${env.GIT_BRANCH} =~ 'jenkins' ) {
+                                      currentBuild.result = 'SUCCESS'
+                                      return
+                                   }
+                     }
 			
 				dir('src/HelloWorldMicroService') {
     			
