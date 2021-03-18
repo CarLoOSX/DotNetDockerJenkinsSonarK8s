@@ -8,9 +8,7 @@ pipeline
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
-	
-	            echo "----------------- ${env.GIT_BRANCH} --------------"
-	            
+		            
 				dir('src/HelloWorldMicroService') {
     			
 				    echo '.: Starting Publishing to SonarQube :.'
