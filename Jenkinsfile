@@ -9,6 +9,8 @@ pipeline
             {
 			    echo '.: Going to the Project\'s Directory :.'
 	
+	            echo "----------------- ${env.BRANCH_NAME} --------------"
+	            
 				dir('src/HelloWorldMicroService') {
     			
 				    echo '.: Starting Publishing to SonarQube :.'
