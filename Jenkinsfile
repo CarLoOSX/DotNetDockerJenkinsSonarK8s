@@ -13,7 +13,7 @@ pipeline
 			    echo "--------------  ${env.GIT_BRANCH} -----------------"
 			
 			       script {
-                    	   if( ${env.GIT_BRANCH} =~ 'jenkins' ) {
+                    	   if( env.GIT_BRANCH =~ 'jenkins' ) {
                                       currentBuild.result = 'SUCCESS'
                                       echo '.: THIS IS AN EARLY SKIP :.'
                                       return
