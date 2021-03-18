@@ -11,7 +11,7 @@ pipeline
 			    
 			    echo "-------------- ${env.GIT_BRANCH} -----------------"
 			    
-			    if ( "${env.GIT_BRANCH}" ==~ /jenkins/ ) {
+			    if ( "${env.GIT_BRANCH}" ==~ "jenkins" ) {
                     echo "YEEEEEHAAAA"
                 } 
  
