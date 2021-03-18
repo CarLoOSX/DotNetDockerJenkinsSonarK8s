@@ -2,7 +2,7 @@
 #### Generate a docker image and deploy to K8s
 
 ### Installing NetCore 
- 
+  
 ```
 https://dotnet.microsoft.com/download
 ```
