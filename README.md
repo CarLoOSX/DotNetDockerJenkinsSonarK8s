@@ -1,6 +1,6 @@
 # NetCoreDockerJenkinsSonarK8s
 #### Generate a docker image and deploy to K8s
-
+    
 ### Installing NetCore 
   
 ```
