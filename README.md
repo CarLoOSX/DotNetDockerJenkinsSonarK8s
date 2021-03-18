@@ -86,7 +86,7 @@ while true; do curl http://MINIKUBE-IP:5000/HelloWorld; sleep 0.2; echo; done
 kubectl patch service aspnetcore-service-CURREN-TVERSION -p '{"spec":{"selector":{"version": "NEW-VERSION"}}}'  
  ```
 
-# 3. Resultados
+# 3. DEMO
 
 ![image alt text](Images/video.png)
 [DEMO](https://youtu.be/YSSy-qTvBWA "DEMO")
