@@ -1,5 +1,5 @@
 # NetCoreDockerJenkinsSonarK8s 🎓🏭
-# LaSalle – Modelos de desarollo del software 🤖
+# LaSalle – Modelos de desarollo del software 
 
 
 # Contenido 📇
