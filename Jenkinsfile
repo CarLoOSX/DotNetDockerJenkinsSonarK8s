@@ -48,10 +48,19 @@ pipeline
                     echo '.: Image uploaded to docker hub :.'
             }
         }
-        stage('Orchestrate') {
+         stage('Orchestrate') {
             steps {
                     echo '.: Deploying to kubernetes :.'
                     
+                    echo "------------${BUILD_NUMBER}---------"
+                    
+                     sh "sed -ie \"s/BUILDNUMBER/${BUILD_NUMBER}/g\" Deployment.yml"
+                    
+                    sh "${env.kubectl} apply -f Deployment.yml"
+
+                    sh "sed -ie \"s/BUILDNUMBER/${BUILD_NUMBER}/g\" Service.yml"
+   
+                    sh "${env.kubectl} apply -f Service.yml"
             }
         } 
     }
