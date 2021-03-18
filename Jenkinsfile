@@ -5,7 +5,9 @@ pipeline
     {
         stage('Build') 
         {
-              echo '.: Going to the Project\'s Directory :.'
+            steps 
+            {
+			    echo '.: Going to the Project\'s Directory :.'
  
 				dir('src/HelloWorldMicroService') {
     			
@@ -22,9 +24,18 @@ pipeline
 				    echo '.: Finished publishing SonarQube :.'
  
 				    echo '.: Exiting the Project\'s Directory :.'
-				
+				}
+            }
         }
-         stage('Deploy') {
+        stage('Test') {
+            steps {
+                echo '.: Testing :.'
+					dir('src') {
+    				    sh "${env.dotnet} test"
+					}	
+            }
+        }
+        stage('Deploy') {
             steps {
                     echo '.: Creating Docker Image (Dotnet) :.'
     
@@ -39,22 +50,11 @@ pipeline
                     echo '.: Image uploaded to docker hub :.'
             }
         }
-        stage('Deploy') {
-            steps {
-                    echo '.: Creating Docker Image (Dotnet) :.'
-
-                    echo '.: Pushing new image to docker hub :.'
-    
-                    echo '.: Image uploaded to docker hub :.'
-            }
-        }
-         stage('Orchestrate') {
+        stage('Orchestrate') {
             steps {
                     echo '.: Deploying to kubernetes :.'
-                    
-                    echo "------------${BUILD_NUMBER}---------"
-                    
-                     sh "sed -ie \"s/BUILDNUMBER/${BUILD_NUMBER}/g\" Deployment.yml"
+                
+                    sh "sed -ie \"s/BUILDNUMBER/${BUILD_NUMBER}/g\" Deployment.yml"
                     
                     sh "${env.kubectl} apply -f Deployment.yml"
 
