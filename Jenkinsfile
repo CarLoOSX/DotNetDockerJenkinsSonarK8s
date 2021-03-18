@@ -3,6 +3,14 @@ pipeline
     agent any
     stages 
     {
+    
+          script {
+                        	   if( env.GIT_BRANCH =~ 'jenkins' ) {
+                                          currentBuild.result = 'SUCCESS'
+                                          echo '.: THIS IS AN EARLY SKIP :.'
+                                          return
+                                       }
+                         }
         stage('Build') 
         {
    
@@ -11,14 +19,6 @@ pipeline
 			    echo '.: Going to the Project\'s Directory :.'
 			    
 			    echo "--------------  ${env.GIT_BRANCH} -----------------"
-			
-			       script {
-                    	   if( env.GIT_BRANCH =~ 'jenkins' ) {
-                                      currentBuild.result = 'SUCCESS'
-                                      echo '.: THIS IS AN EARLY SKIP :.'
-                                      return
-                                   }
-                     }
 			
 				dir('src/HelloWorldMicroService') {
     			
