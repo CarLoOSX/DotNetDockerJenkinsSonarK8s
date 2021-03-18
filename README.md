@@ -36,8 +36,6 @@
 # 2. Instalación 
  Programas utilizados:
 
-* **NetCore** página oficial: https://dotnet.microsoft.com/download
-  + Necesitamos el cli y runtime de netCore para la posterior compilación de los projectos
 * **Jenkins** página oficial: https://www.jenkins.io/download/
   + Utilizamos el puerto 8080 que se encuentra publico en el servidor para poder lanzar el trigger (Webhook).
 * **Sonarqube** página oficial: https://www.sonarqube.org/downloads/ 
@@ -47,46 +45,10 @@
 * **Minikube** página oficial: https://kubernetes.io/es/docs/tasks/tools/install-kubectl/
   + Encargado de desplegar los pods (imagenes de docker) y establecer los diferentes servicios.
 
-  #### SonarQube para .NetCore CLI (SonarScanner)
-
-  ```
-  dotnet tool install --global dotnet-sonarscanner
-  ```
-  * Probablemente, necesitarás añadirlo a tu path, normalmente se encuentra en:
-  ```
-  ~.dotnet/tools
-  ```
-  
-  #### Recuerda que tendrás que configurar las siguientes variables de entorno para Jenkins
-  ```
-  dotnet
-  sonarScanner
-  kubectl
-  docker
-  ```
 
 #### Dirección publica (Servidor)
 
 http://whiskicasa.tplinkdns.com
 
- ```
- PUERTOS : 
-          8080 (JENKINS) 
-          9000 (SONARQUBE)
- ```
 
-### Comandos para blue green test:
- #### CURL CONSTANTE
- ```
-while true; do curl http://MINIKUBE-IP:5000/HelloWorld; sleep 0.2; echo; done
- ```
-
-#### CAMBIO DE VERSION APP SERVICE EN CALIENTE
- ```
-kubectl patch service aspnetcore-service-CURREN-TVERSION -p '{"spec":{"selector":{"version": "NEW-VERSION"}}}'  
- ```
-
-# 3. DEMO
-
-![image alt text](Images/video.png)
-[DEMO](https://youtu.be/YSSy-qTvBWA "DEMO")
+# 3. Resultados
