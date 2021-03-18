@@ -43,3 +43,15 @@ NetCoreDockerK8s/src/HelloWorldMicroService
 dotnet test
 ```
 
+#### Application
+
+### Base url
+
+http://whiskicasa.tplinkdns.com
+
+### Ports
+
+8080
+9000
+5000
+
