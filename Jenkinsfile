@@ -52,7 +52,7 @@ pipeline
         }
         stage('Orchestrate') {
             steps {
-                    echo '.: Deploying to kubernetes :.'
+                    echo '.: Deploying to kubernetes with Build version :.'
                 
                     sh "sed -ie \"s/BUILDNUMBER/${BUILD_NUMBER}/g\" Deployment.yml"
                     
