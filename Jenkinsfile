@@ -4,20 +4,18 @@ pipeline
     stages 
     {
         stage('Build') 
-        {
+        {          
             steps 
             {
 			    echo '.: Going to the Project\'s Directory :.'
- 
+	
 				dir('src/HelloWorldMicroService') {
     			
 				    echo '.: Starting Publishing to SonarQube :.'
 				
 				    sh "${env.sonarScanner} begin /k:\"HelloWorld\" /d:sonar.host.url=\"http://whiskicasa.tplinkdns.com:9000\" /d:sonar.login=\"3395a08ed67a6c345690b81722f09bec7f12b6bf\""
 				
-				    sh "${env.dotnet} clean"
-				
-				    sh "${env.dotnet} build"
+				    sh "${env.dotnet} build --no-incremental"
 				
 				    sh "${env.sonarScanner} end /d:sonar.login=\"3395a08ed67a6c345690b81722f09bec7f12b6bf\""
 				
@@ -48,9 +46,15 @@ pipeline
                     sh "${env.docker} push carloosx/aspnethelloworld"
     
                     echo '.: Image uploaded to docker hub :.'
+               
             }
         }
         stage('Orchestrate') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'main';
+                }
+            }
             steps {
                     echo '.: Deploying to kubernetes with Build version :.'
                 
